@@ -1,0 +1,31 @@
+#hash_type = int(input(r"For computing hash values, choose 1 for MD5 or 2 for SHA1: "))
+
+#HASH_TYPE_SHA1 = 1
+#HASH_TYPE_MD5 = 2
+
+def calculate_md5_hash(imagefile):
+    hash_function1 = None
+    hash_function1 = hashlib.md5()
+        
+    with open(imagefile,"rb") as f:
+        chunk = 0
+        while chunk != b'':
+            chunk = f.read(1024)
+            hash_function1.update(chunk)
+    computed_hash1 = hash_function1.hexdigest()
+    return computed_hash1
+
+def calculate_sha1_hash(imagefile):
+    hash_function2 = None
+    hash_function2 = hashlib.sha1()
+            
+    with open(imagefile,"rb") as f:
+        chunk = 0
+        while chunk != b'':
+            chunk = f.read(1024)
+	    hash_function2.update(chunk)
+    computed_hash2 = hash_function2.hexdigest()
+    return computed_hash2
+
+print("The calculated MD5 hash: ", calculate_md5_hash(imagefile),"\n")
+print("The calculated SHA1 hash: ", calculate_sha1_hash(imagefile))

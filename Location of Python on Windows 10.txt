@@ -1,0 +1,6 @@
+>>> import os
+>>> import sys
+>>> os.path.dirname(sys.executable)
+'C:\\Users\\Ashar\\AppData\\Local\\Programs\\Python\\Python39'
+
+C:\Users\Ashar\AppData\Local\Programs\Python\Python39
